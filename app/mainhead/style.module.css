@@ -1,0 +1,127 @@
+
+.skillImage{
+    height:400px;
+}
+.content{
+    background-color:rgb(12, 17, 109);
+    height:70px;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:60px;
+    color:whitesmoke;
+    padding:0px 20px;
+    
+    
+}
+
+.second{
+    background-color:rgb(245, 247, 246);
+    height:70px;
+
+}
+.trendingSection{
+    width:95%;
+    margin:60px auto;
+}
+
+.heading{
+    font-size:45px;
+    margin-bottom:30px;
+    color:#1c1d1f;
+    font-weight:bold;
+}
+
+.courseGrid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.card{
+    border:1px solid #ddd;
+    border-radius:18px;
+    padding:18px;
+    transition:.3s;
+    background:white;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+.buy{
+    background-color:#2563eb;
+    color:white;
+    height:40px;
+    width:100px;
+    border-radius:8px;
+}
+
+.courseImage{
+    width:300px;
+    height:120px;
+   object-fit:cover;
+    border-radius:12px;
+}
+
+.card h2{
+    font-size:30px;
+    margin-top:18px;
+    color:#1c1d1f;
+}
+
+.card p{
+    color:gray;
+    margin:12px 0;
+    font-size:18px;
+}
+
+.rating{
+    display:flex;
+    gap:10px;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.badge{
+    background:#d4f4d2;
+    color:green;
+    padding:6px 12px;
+    border-radius:8px;
+    font-weight:bold;
+}
+
+.price{
+    margin-top:18px;
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.newPrice{
+    font-size:34px;
+    font-weight:bold;
+}
+
+.oldPrice{
+    font-size:24px;
+    color:gray;
+    text-decoration:line-through;
+}
+
+
+@media(max-width:1200px){
+    .courseGrid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:768px){
+    .courseGrid{
+        grid-template-columns:1fr;
+    }
+}
+/* ================= FOOTER ================= */
+

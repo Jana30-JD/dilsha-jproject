@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+ 
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #08e2f2;
+  height:80px;
+  width:100%;
+
+}
+.about{
+    font-style:bold;
+    font-size:20px;
+    
+
+}
+
+.banner{
+    height:70px;
+    width:100px;
+}
+.service{
+    font-style:bold;
+    font-size:20px;
+}
+.products{
+    font-style:bold;
+    font-size:20px;
+}
+.careers{
+    font-style:bold;
+    font-size:20px;
+}
+.btn{
+  
+    border-radius: 8px;
+    height:40px;
+    width:60px;
+}
+.btn:hover{
+    background-color: aqua;
+      border:1px solid blue;
+}
