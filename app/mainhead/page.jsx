@@ -3,6 +3,7 @@
   import styles from "./style.module.css";
   import Link from "next/link";
   import { useCart } from "../Add/Cardcontext";
+  import { useRouter } from "next/navigation";
 
 
  import { useState } from "react";
@@ -11,6 +12,7 @@
   
 export default function Home() {
  const { addToCart } = useCart();
+ const router = useRouter();
  const products = [
   {
     id: 1,
@@ -148,6 +150,7 @@ export default function Home() {
         onClick={() => {
           console.log("clicked");
           addToCart(item);
+          router.push("/remove");
         }}
       >
         Add Item

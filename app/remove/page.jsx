@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useCart } from "../Add/Cardcontext";
 import styles from "./style.module.css";
+import { useState, useEffect } from "react";
+import { FloatingWhatsApp } from "@digicroz/react-floating-whatsapp";
 
 export default function Products() {
   const {
@@ -14,6 +16,17 @@ export default function Products() {
     totalPrice,
   } = useCart();
 
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    // Optional initialization
+  }, []);
+
+  const navigator = () => {
+    // Avoid document.write in React
+    setData(totalPrice);
+  };
+
   return (
     <div className={styles.container}>
       <h1 className={styles.heading}>My Cart</h1>
@@ -23,50 +36,28 @@ export default function Products() {
           <h2>Your Cart is Empty</h2>
 
           <Link href="/mainhead">
-            <button className={styles.shopBtn}>
-              Continue Shopping
-            </button>
+            <button className={styles.shopBtn}>Continue Shopping</button>
           </Link>
         </div>
       ) : (
         <>
           {cart.map((item) => (
             <div className={styles.card} key={item.id}>
-              <Image
-                src={item.image}
-                alt={item.title}
-                width={120}
-                height={120}
-              />
+              <Image src={item.image} alt={item.title} width={120} height={120} />
 
               <div className={styles.info}>
                 <h2>{item.title}</h2>
-
                 <p>{item.author}</p>
-
                 <h3>₹{item.price}</h3>
               </div>
 
               <div className={styles.quantity}>
-                <button
-                  onClick={() => decreaseQuantity(item.id)}
-                >
-                  -
-                </button>
-
+                <button onClick={() => decreaseQuantity(item.id)}>-</button>
                 <span>{item.quantity}</span>
-
-                <button
-                  onClick={() => increaseQuantity(item.id)}
-                >
-                  +
-                </button>
+                <button onClick={() => increaseQuantity(item.id)}>+</button>
               </div>
 
-              <button
-                className={styles.delete}
-                onClick={() => removeItem(item.id)}
-              >
+              <button className={styles.delete} onClick={() => removeItem(item.id)}>
                 Delete
               </button>
             </div>
@@ -76,13 +67,26 @@ export default function Products() {
             <h2>Total : ₹{totalPrice}</h2>
 
             <Link href="/checkout">
-              <button className={styles.checkout}>
-                Checkout
+              <button className={styles.checkout} onClick={navigator}>
+                BUY NOW
               </button>
             </Link>
           </div>
         </>
       )}
+
+      <FloatingWhatsApp
+        phoneNumber="9505954559"
+        accountName="nidu"
+        avatar="/path/to/avatar.jpg"
+        statusMessage="Typically replies within 1 hour"
+        chatMessage="Hello! 👋 How can we help you today?"
+        darkMode={false}
+        allowClickAway={true}
+        allowEsc={true}
+        notification={true}
+        notificationSound={true}
+      />
     </div>
   );
 }

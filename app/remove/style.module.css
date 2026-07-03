@@ -2,11 +2,18 @@
     width:90%;
     margin:auto;
     padding:40px 0;
+    background-color:rgba(231, 168, 9, 0);
+    color:black;
+    font-style: italic;
 }
 
 .heading{
     text-align:center;
     margin-bottom:30px;
+    background-color:rgba(255, 21, 21, 0);
+    color:blue;
+    padding:10px;
+    font-size:20px;
 }
 
 .card{
@@ -34,6 +41,8 @@
     width:35px;
     height:35px;
     cursor:pointer;
+    background-color:lightgray;
+    border:none;
 }
 
 .delete{
@@ -47,6 +56,9 @@
 
 .total{
     text-align:right;
+    padding:20px;
+  
+    font-size:20px;
     margin-top:30px;
 }
 
@@ -63,6 +75,10 @@
     padding:12px 25px;
     margin-top:20px;
     cursor:pointer;
+    background-color:yellow;
+    border:none;
+    border-radius:10px;
+    color:black;
 }
 
 .empty{

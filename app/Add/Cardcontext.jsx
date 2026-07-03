@@ -9,7 +9,8 @@ export const useCart = () => useContext(CartContext);
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
-  // Load cart from LocalStorage
+  
+  
   useEffect(() => {
     const storedCart = localStorage.getItem("cart");
 
@@ -18,12 +19,12 @@ export const CartProvider = ({ children }) => {
     }
   }, []);
 
-  // Save cart
+ 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
-  // Add Item
+ 
   const addToCart = (product) => {
     const exist = cart.find((item) => item.id === product.id);
 
@@ -47,12 +48,13 @@ export const CartProvider = ({ children }) => {
     }
   };
 
-  // Remove One Item
+ 
+  
   const removeItem = (id) => {
     setCart(cart.filter((item) => item.id !== id));
   };
 
-  // Increase Quantity
+
   const increaseQuantity = (id) => {
     setCart(
       cart.map((item) =>
@@ -63,7 +65,8 @@ export const CartProvider = ({ children }) => {
     );
   };
 
-  // Decrease Quantity
+ 
+  
   const decreaseQuantity = (id) => {
     setCart(
       cart.map((item) =>
@@ -74,7 +77,8 @@ export const CartProvider = ({ children }) => {
     );
   };
 
-  // Select One Item
+
+  
   const toggleSelect = (id) => {
     setCart(
       cart.map((item) =>
@@ -85,7 +89,7 @@ export const CartProvider = ({ children }) => {
     );
   };
 
-  // Select All
+
   const selectAll = () => {
     const allSelected = cart.every((item) => item.selected);
 
@@ -97,38 +101,38 @@ export const CartProvider = ({ children }) => {
     );
   };
 
-  // Delete Selected
+ 
   const deleteSelected = () => {
     setCart(cart.filter((item) => !item.selected));
   };
 
-  // Clear Cart
+
   const clearCart = () => {
     setCart([]);
   };
 
-  // Total Price
+
   const totalPrice = cart.reduce(
     (total, item) => total + item.price * item.quantity,
     0
   );
 
-  return (
-    <CartContext.Provider
-      value={{
-        cart,
-        addToCart,
-        removeItem,
-        increaseQuantity,
-        decreaseQuantity,
-        toggleSelect,
-        selectAll,
-        deleteSelected,
-        clearCart,
-        totalPrice,
-      }}
-    >
-      {children}
-    </CartContext.Provider>
-  );
+return (
+  <CartContext.Provider
+    value={{
+      cart,
+      addToCart,
+      removeItem,
+      increaseQuantity,
+      decreaseQuantity,
+      toggleSelect,
+      selectAll,
+      deleteSelected,
+      clearCart,
+      totalPrice,
+    }}
+  >
+    {children}
+  </CartContext.Provider>
+);
 };
