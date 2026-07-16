@@ -16,7 +16,7 @@
 /* Login Card */
 .loginCard {
   width: 420px;
-  background: #ffffff;
+  background: #fdfbfb;
   padding: 40px;
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -58,11 +58,12 @@
 .inputGroup input {
   width: 100%;
   padding: 12px;
-  border: 1px solid #ccc;
+  border: 1px solid #121111;
   border-radius: 8px;
   font-size: 16px;
   outline: none;
   transition: 0.3s;
+  color:black;
 }
 
 /* Input Focus */
